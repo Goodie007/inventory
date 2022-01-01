@@ -1,8 +1,11 @@
 import React, { FC, useState } from 'react';
+import useFetch from 'react-fetch-hook';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSearchbar} from '@ionic/react';
 import './Tab1.css';
 
 const Stocks: React.FC = () => {
+  const url = 'https://randomuser.me/api/'
+  const { isLoading, data, error } = useFetch(url+'?results=200')
   const [searchText, setSearchText] = useState('');
 
   return (
